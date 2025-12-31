@@ -2,7 +2,7 @@
 -- CREATE DATABASE IF NOT EXISTS restaurant_db;
 
 -- Use the database
--- USE restaurant_db;
+USE restaurant_db;
 
 -- Create userDB table
 CREATE TABLE IF NOT EXISTS userDB (

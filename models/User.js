@@ -1,10 +1,11 @@
 const pool = require('../config/database');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');  // Uncomment this!
 
 class User {
   static async create(email, password, fname) {
+    const hashedPassword = await bcrypt.hash(password, 10);  // Hash the password!
     const sql = 'INSERT INTO userDB (email, password, fname) VALUES (?, ?, ?)';
-    const [result] = await pool.execute(sql, [email, password, fname]);
+    const [result] = await pool.execute(sql, [email, hashedPassword, fname]);
     return { id: result.insertId, email, fname };
   }
 
