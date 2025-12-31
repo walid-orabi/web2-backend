@@ -1,5 +1,5 @@
 const express = require('express');
-const { getMenu, getMenuByCategory } = require('../controllers/menuController');
+const { getMenu, getMenuByCategory } = require('../src/controllers/menuController');
 
 const router = express.Router();
 

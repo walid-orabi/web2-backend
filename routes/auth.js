@@ -1,5 +1,5 @@
 const express = require('express');
-const { signup, login, logout } = require('../controllers/authController');
+const { signup, login, logout } = require('../src/controllers/authController');
 const { validateSignup, validateLogin } = require('../middleware/validation');
 const rateLimit = require('express-rate-limit');
 
