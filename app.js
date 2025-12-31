@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const authRoutes = require('./routes/auth');
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Middleware
 app.use(helmet());
