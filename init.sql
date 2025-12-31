@@ -4,8 +4,8 @@
 -- Use the database
 -- USE restaurant_db;
 
--- Create users table
-CREATE TABLE IF NOT EXISTS users (
+-- Create userDB table
+CREATE TABLE IF NOT EXISTS userDB (
   id INT AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
@@ -33,5 +33,5 @@ CREATE TABLE IF NOT EXISTS orders (
   total DECIMAL(10,2) NOT NULL,
   status VARCHAR(50) DEFAULT 'pending',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  FOREIGN KEY (user_id) REFERENCES userDB(id)
 );

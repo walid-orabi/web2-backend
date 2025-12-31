@@ -14,9 +14,9 @@ You need to build a backend API for the R-W Restaurant React frontend applicatio
 ## Database Schema
 Create the following tables in PostgreSQL:
 
-### Users Table
+### userDB Table
 ```sql
-CREATE TABLE users (
+CREATE TABLE userDB (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE menu_items (
 ```sql
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
+  user_id INTEGER REFERENCES userDB(id),
   items JSONB NOT NULL, -- Store cart items as JSON
   total DECIMAL(10,2) NOT NULL,
   status VARCHAR(50) DEFAULT 'pending',
